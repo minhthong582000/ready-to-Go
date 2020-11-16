@@ -1,4 +1,4 @@
-package main
+package doublylinkedlist
 
 import (
 	"errors"
@@ -208,8 +208,16 @@ func (list DoublyLinkedList) Contains(obj interface{}) bool {
 	return true
 }
 
+func NewDoublyLinkedList(head *Node, tail *Node, size int) DoublyLinkedList {
+	return DoublyLinkedList{
+		head: head,
+		tail: tail,
+		size: size,
+	}
+}
+
 func main() {
-	var list DoublyLinkedList = DoublyLinkedList{nil, nil, 0}
+	var list DoublyLinkedList = NewDoublyLinkedList(nil, nil, 0)
 
 	list.AddHead(11)
 	list.AddLast(10)
